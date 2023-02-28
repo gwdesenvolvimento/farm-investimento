@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@400;700;800&display=swap');
+
+:root{
+    --primary: #ae5e5d;
+    --orange: #d34542;
+    --secondary: #ddb1ab;
+    --gray:#575656;
+    --light: #faf9f9;
+    --light-brown: #c29c93;
+}
+
+body{
+    
+}
+
+h3 {
+    font-size: 3.2rem;
+    color: var(--gray);
+}
+
+span {
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    color: var(--gray)
+}
+
+.v-card{
+    box-shadow: none !important;
+}
+
+

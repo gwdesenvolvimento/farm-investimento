@@ -1,0 +1,40 @@
+<template>
+    
+    <div class="d-flex justify-center">
+        <v-card class="country">
+            <v-card-title class="justify-center">
+                {{ country.Country }}
+            </v-card-title>
+            <v-card-text>
+                <v-row >
+                    <farm-card-info title="Total de Casos" :value="country.TotalConfirmed"/>
+                    <farm-card-info title="Mortes" :value="country.TotalDeaths"/>
+                    <farm-card-info title="Fatalidade" :value="100"/>
+                </v-row>
+            </v-card-text>
+        </v-card>
+    </div>
+    
+</template>
+<style scoped>
+    .country {
+        width: 70%;
+        border: 1px solid var(--light);
+        margin-top: 1rem;
+    }
+</style>
+
+<script>
+export default {
+    name: 'FarmCountry',
+    data: () => ({
+        //
+    }),
+    props: {
+        country: {
+            type: Object,
+            required: true
+        }
+    }
+};
+</script>
