@@ -12,6 +12,10 @@ Vue.component('farm-header', require('./components/FarmHeader/FarmHeader.vue').d
 Vue.component('farm-filter', require('./components/FarmFilter/FarmFilter.vue').default)
 Vue.component('farm-country', require('./components/FarmCountry/FarmCountry.vue').default)
 Vue.component('farm-card-info', require('./components/FarmCountry/FarmCardInfo/FarmCardInfo.vue').default)
+
+Vue.component('farm-global', require('./components/FarmGlobal/FarmGlobal.vue').default)
+Vue.component('farm-global-card-info', require('./components/FarmGlobal/FarmGlobalCardInfo/FarmGlobalCardInfo.vue').default)
+
 axios.defaults.baseURL = 'https://api.covid19api.com'
 
 new Vue({

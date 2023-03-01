@@ -1,20 +1,18 @@
 <template>
-    
     <div class="d-flex justify-center">
         <v-card class="country">
             <v-card-title class="justify-center">
-                {{ country.Country }}
+                Informações Globais
             </v-card-title>
             <v-card-text>
                 <v-row >
-                    <farm-card-info title="Total de Casos" :value="parseFloat(country.TotalConfirmed)"/>
-                    <farm-card-info title="Mortes" :value="parseFloat(country.TotalDeaths)"/>
-                    <farm-card-info title="Fatalidade" :value="country.fatalidadePercentual" :showPercentual="true"/>
+                    <farm-global-card-info title="Total Confirmados" :value="globalData.TotalConfirmed"/>
+                    <farm-global-card-info title="Total de Mortes" :value="globalData.TotalDeaths"/>
+                    <farm-global-card-info title="Total de Recuperados" :value="globalData.TotalRecovered"/>
                 </v-row>
             </v-card-text>
         </v-card>
     </div>
-    
 </template>
 <style scoped>
     .country {
@@ -32,14 +30,14 @@
 
 <script>
 export default {
-    name: 'FarmCountry',
+    name: 'FarmGlobal',
     data: () => ({
         //
     }),
     props: {
-        country: {
+        globalData: {
             type: Object,
-            required: true
+            required: false
         }
     },
 };

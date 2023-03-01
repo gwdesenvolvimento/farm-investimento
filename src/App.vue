@@ -6,24 +6,34 @@
       <v-container>
         <farm-filter />
         
-        <div v-for="country in lstFilteredCovidCases" :key="country.ID" >
-          <farm-country :country="country" />
+        <div class="d-flex justify-center mt-2 mb-2" v-if="showLoading">
+          <v-progress-circular 
+            indeterminate 
+            color="#d34542"
+            size="70"
+          >
+          </v-progress-circular>
+        </div>
+
+        <div v-if="!showLoading && !isCachingInProgress">
+          <div v-for="country in lstFilteredCovidCases" :key="country.ID" >
+            <farm-country :country="country" />
+          </div>
         </div>
         
-        <v-row class="d-flex flex-column justify-center">
-          <v-col>
-            <v-alert
-              type="warning"
-              class="alert-width"
-              v-if="showLoading"
-            >
-              {{ apiMessage }}
+        <div v-if="isCachingInProgress">
+          <v-row class="mt-5 justify-center">
+            <v-alert type="warning">
+              O servidor está cacheando novas informação, mas você não ficará sem os dados, exibiremos para você os dados globais por enquanto ok?
             </v-alert>
-          </v-col>
+          </v-row>
           
-        </v-row>
+          <farm-global 
+            :global-data="lstFilteredCovidCases.Global"
+          />
+        </div>
         
-
+        
       </v-container>
     </v-main>
   </v-app>
@@ -46,7 +56,7 @@ export default {
     this.$store.dispatch('fetchLstCovidCases');
   },
   computed: {
-    ...mapGetters(['lstFilteredCovidCases','apiMessage', 'showLoading'])
+    ...mapGetters(['lstFilteredCovidCases','apiMessage', 'showLoading', 'isCachingInProgress'])
   }
 };
 </script>

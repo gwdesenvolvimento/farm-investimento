@@ -27,7 +27,7 @@
 </style>
 <script>
 export default {
-    name: 'FarmCardInfo',
+    name: 'FarmGlobalCardInfo',
     data: () => ({
         //
     }),
