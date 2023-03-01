@@ -3,18 +3,28 @@
     <farm-navbar />
     <v-main>
       <farm-header />
-     
       <v-container>
-
         <farm-filter />
-
-        <div v-for="country in lstCountry" :key="country.ID">
+        
+        <div v-for="country in lstFilteredCovidCases" :key="country.ID" >
           <farm-country :country="country" />
         </div>
         
+        <v-row class="d-flex flex-column justify-center">
+          <v-col>
+            <v-alert
+              type="warning"
+              class="alert-width"
+              v-if="showLoading"
+            >
+              {{ apiMessage }}
+            </v-alert>
+          </v-col>
+          
+        </v-row>
+        
 
       </v-container>
-      
     </v-main>
   </v-app>
 </template>
@@ -22,28 +32,21 @@
   .v-toolbar__content {
     background-color: #fff;
   }
+  .alert-width{
+     width: 70%;
+  }
 </style>
-
 <script>
-import client from '@/services/http/client'
+import { mapGetters } from 'vuex';
 export default {
   name: 'App',
   data: () => ({
-    lstCountry : []
   }),
   mounted() {
-    this.fetchCountry();
-  },  
-  methods: {
-    fetchCountry() {
-      client.get('https://api.covid19api.com/summary')
-        .then(response => {
-          this.lstCountry = response.data.Countries
-      })
-    },
-    filterCountry() {
-      this.lstCountry = this.lstCountry.filter(item => item.Country == 'Brazil')
-    }
+    this.$store.dispatch('fetchLstCovidCases');
+  },
+  computed: {
+    ...mapGetters(['lstFilteredCovidCases','apiMessage', 'showLoading'])
   }
 };
 </script>

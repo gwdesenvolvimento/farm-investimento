@@ -1,9 +1,12 @@
 <template>
     <v-col class="d-flex justify-center">
-        <v-card>
-            <v-card-title class="title-info">{{ title }}</v-card-title>
+        <v-card class="border-none">
+            <v-card-title class="d-flex title-info justify-center">{{ title }}</v-card-title>
             <v-card-text class="d-flex justify-center">
-                <span class="value-span">{{ value }}</span>
+                <span class="value-span">
+                    {{ formatedValue }}
+                    <span v-if="showPercentual">%</span>
+                </span>
             </v-card-text>
         </v-card>
     </v-col>
@@ -11,11 +14,16 @@
 <style scoped>
     .value-span {
         color: var(--orange);
-        font-weight: bold;
+        font-size: 2rem;
     }   
     .title-info {
         padding: 0.2rem;
     } 
+    .v-card__title  {
+        font-size: 0.785rem;
+        font-weight: 400;
+        color: var(--gray);
+    }
 </style>
 <script>
 export default {
@@ -31,6 +39,16 @@ export default {
         value: {
             type: String,
             required: Number
+        },
+        showPercentual: {
+            type: Boolean,
+            required: false,
+            default: false
+        }
+    },
+    computed: {
+        formatedValue() {
+            return this.value.toLocaleString('pt-BR')
         }
     }
 };

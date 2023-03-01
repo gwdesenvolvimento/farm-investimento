@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@400;700;800&display=swap');
-
 :root{
     --primary: #ae5e5d;
     --orange: #d34542;
@@ -8,25 +6,21 @@
     --light: #faf9f9;
     --light-brown: #c29c93;
 }
-
-body{
-    
+*{
+    font-family: 'Montserrat Alternates', sans-serif !important;
 }
-
-h3 {
-    font-size: 3.2rem;
-    color: var(--gray);
-}
-
-span {
-    font-size: 1.3rem;
-    line-height: 1.5rem;
-    font-weight: 500;
-    color: var(--gray)
-}
-
 .v-card{
+    box-shadow: rgba(255, 255, 255, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px !important;
+    border:none !important;
+}
+.border-none {
     box-shadow: none !important;
+}
+.theme--light.v-text-field > .v-input__control > .v-input__slot:before {
+    border-color: var(--orange) !important;
+}
+.v-icon {
+    color: var(--orange) !important;
 }
 
 

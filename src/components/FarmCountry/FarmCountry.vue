@@ -9,7 +9,7 @@
                 <v-row >
                     <farm-card-info title="Total de Casos" :value="country.TotalConfirmed"/>
                     <farm-card-info title="Mortes" :value="country.TotalDeaths"/>
-                    <farm-card-info title="Fatalidade" :value="100"/>
+                    <farm-card-info title="Fatalidade" :value="percentualDeath" :showPercentual="true"/>
                 </v-row>
             </v-card-text>
         </v-card>
@@ -21,6 +21,12 @@
         width: 70%;
         border: 1px solid var(--light);
         margin-top: 1rem;
+        
+    }
+    .v-card__title  {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--gray);
     }
 </style>
 
@@ -34,6 +40,11 @@ export default {
         country: {
             type: Object,
             required: true
+        }
+    },
+    computed: {
+        percentualDeath() {
+            return (this.country.TotalDeaths * 100 / this.country.TotalConfirmed).toFixed(2)
         }
     }
 };
