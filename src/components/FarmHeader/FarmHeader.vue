@@ -1,14 +1,26 @@
 <template>
-    <v-row class="d-flex justify-space-between main-background">
-        <v-col class="d-flex flex-column justify-center ml-16">
-            <h3 class="title">Conheça o Covidômetro</h3>
-            <span class="content mb-16">
+    <v-row 
+        class="d-flex justify-space-between main-background"
+    >
+        <v-col 
+            class="d-flex flex-column justify-center ml-16"
+        >
+            <h3 
+                class="title"
+            >
+                Conheça o Covidômetro
+            </h3>
+            <span 
+                class="content mb-16"
+            >
                 Fique atualizado com velocidade e transparência. O Covidômetro é uma 
                 ferramenta que mostra para você em tempo real o número de casos e óbitos 
                 relacionados a pandemia da COVID-19 ao redor do mundo.
             </span>
         </v-col>
-        <v-col class="d-flex fle-column justify-end mr-16">
+        <v-col 
+            class="d-flex fle-column justify-end mr-16"
+        >
             <img src="../../assets/img/doctors.svg">
         </v-col>
     </v-row>

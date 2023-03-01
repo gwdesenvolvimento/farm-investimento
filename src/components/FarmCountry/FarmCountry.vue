@@ -7,9 +7,19 @@
             </v-card-title>
             <v-card-text>
                 <v-row >
-                    <farm-card-info title="Total de Casos" :value="parseFloat(country.TotalConfirmed)"/>
-                    <farm-card-info title="Mortes" :value="parseFloat(country.TotalDeaths)"/>
-                    <farm-card-info title="Fatalidade" :value="country.fatalidadePercentual" :showPercentual="true"/>
+                    <farm-card-info 
+                        title="Total de Casos" 
+                        :value="parseFloat(country.TotalConfirmed)"
+                    />
+                    <farm-card-info 
+                        title="Mortes" 
+                        :value="parseFloat(country.TotalDeaths)"
+                    />
+                    <farm-card-info 
+                        title="Fatalidade" 
+                        :value="country.fatalidadePercentual" 
+                        :showPercentual="true"
+                    />
                 </v-row>
             </v-card-text>
         </v-card>
