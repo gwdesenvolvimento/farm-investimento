@@ -27,7 +27,7 @@
                 <v-alert 
                     type="warning"
                 >
-                    O servidor está cacheando novas informação, mas você não ficará sem os dados, exibiremos para você os dados globais por enquanto ok?
+                    O servidor está cacheando novas informações, mas você não ficará sem os dados, exibiremos para você os dados globais por enquanto ok?
                 </v-alert>
             </v-row>
         
