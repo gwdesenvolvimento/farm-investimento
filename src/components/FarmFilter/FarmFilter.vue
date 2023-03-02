@@ -5,8 +5,8 @@
                 Filtrar dados sobre um país 
             </v-card-title>
             <v-card-text>
-                <v-row class="pr-16 pl-16">
-                    <v-col cols="7" xs="12">
+                <v-row class="pr-md-16 pl-md-16">
+                    <v-col class="col-md-7 col-12">
                         <v-text-field
                             label="Filtrar dados sobre um país "
                             placeholder="Digite o nome do País"
@@ -21,25 +21,26 @@
                         <v-radio-group 
                             v-model="optionOrder"
                             @change="orderCountries"
+                            label="Ordenação"
                         >
                             <v-radio
-                                label="Ordenar A|Z"
+                                label="A|Z"
                                 value="ASC|COUNTRY"
                             />
                             <v-radio
-                                label="Ordenar Z|A"
+                                label="Z|A"
                                 value="DESC|COUNTRY"
                             />
                             <v-radio
-                                label="Maiores Totais de Casos"
+                                label="Totais de Casos"
                                 value="ASC|TOTAIS"
                             />
                             <v-radio
-                                label="Maiores Totais de Mortes"
+                                label="Totais de Mortes"
                                 value="ASC|MORTES"
                             />
                             <v-radio
-                                label="Maiores Fatalidades"
+                                label="Fatalidades"
                                 value="ASC|FATALIDADES"
                             />
                         </v-radio-group>
@@ -52,14 +53,28 @@
 <style scoped>
     .filter {
         width: 70%;
-        margin-top: -80px;
+        margin-top: -60px;
         border: 1px solid var(--light);
+    }
+
+    .filter-row {
+        padding-left: 120px;
     }
 
     .v-card__title  {
         font-size: 1.5rem;
         font-weight: 700;
         color: var(--gray);
+    } 
+
+    @media only screen and (max-width: 600px) {
+        .filter {
+            width: 100%;
+            margin-top: 0px;
+        }
+        .v-card__title  {
+            font-size: 0.875rem;
+        }
     }
 
 </style>

@@ -8,10 +8,12 @@ const store = new Vuex.Store({
     state: {
         lstCovidCases: [],
         lstFilteredCovidCases: [],
+        lstLastFiveDays: [],
         globalInfo: {},
         apiMessage: '',
         isCachingInProgress: false,
-        showLoading: false
+        showLoading: false,
+        isLoadingDetails: false
     },
     mutations: {
         saveLstCovidCases(state, payload) {
@@ -63,15 +65,22 @@ const store = new Vuex.Store({
                 case "FATALIDADES": state.lstFilteredCovidCases = state.lstFilteredCovidCases.sort((a, b) => b.fatalidadePercentual - a.fatalidadePercentual); break;
             }
             //
+        },
+        saveLstFiveDays(state, payload) {
+            state.lstLastFiveDays = payload
+        },
+        setLoadingDetails(state, loading) {
+            state.isLoadingDetails = loading
         }
-
     },
     getters: {
         lstCovidCases: state => state.lstCovidCases,
         lstFilteredCovidCases: state => state.lstFilteredCovidCases,
         apiMessage: state => state.apiMessage,
         showLoading: state => state.showLoading,
-        isCachingInProgress: state => state.isCachingInProgress
+        isCachingInProgress: state => state.isCachingInProgress,
+        lstLastFiveDays: state => state.lstLastFiveDays,
+        isLoadingDetails: state => state.isLoadingDetails
     },
     actions: {
         fetchLstCovidCases(context) {
@@ -90,9 +99,26 @@ const store = new Vuex.Store({
                     }
                     
                     context.commit('saveLstCovidCases', response.data)
-                    context.commit('saveApiMessage', response.data.Message)
+                    context.commit('saveApiMessage', 'O servidor está cacheando novas informações')
 
+                }).catch(error => {
+                    context.commit('saveApiMessage', error)
                 })
+        },
+        fetchLstCovidCasesByCountry(context, countryName) {
+
+            countryName = countryName.toLowerCase();
+            context.commit('setLoadingDetails', true)
+            axios.get('/country/'+countryName+'/status/confirmed')
+                .then(response => {
+                    let lastFiveDays = response.data.sort((a, b) => {
+                        return new Date(b.Date) - new Date(a.Date);
+                    }).slice(0,5)
+                    context.commit('saveLstFiveDays', lastFiveDays)
+                    context.commit('setLoadingDetails', false)
+                }).catch(() => {
+                    context.commit('saveApiMessage', 'Ocorreu um erro ao efetuar essa requisição.')
+                });
         },
         filterLstCovidCases(context, countryName) {
             context.commit('filterLstCovidCases', countryName)

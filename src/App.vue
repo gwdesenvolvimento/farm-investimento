@@ -12,16 +12,9 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
 export default {
-  name: 'App',
-  data: () => ({
-  }),
-  mounted() {
-    this.$store.dispatch('fetchLstCovidCases');
-  },
-  computed: {
-    ...mapGetters(['lstFilteredCovidCases','apiMessage', 'showLoading', 'isCachingInProgress'])
-  }
+  name: "App",
+  data: () => ({}),
+  mounted() {},
 };
 </script>

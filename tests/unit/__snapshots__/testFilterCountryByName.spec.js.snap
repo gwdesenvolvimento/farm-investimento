@@ -19,11 +19,10 @@ exports[`Testando componente FarmFilter Verifica se Renderizou corretamente 1`] 
       class="v-card__text"
     >
       <div
-        class="row pr-16 pl-16"
+        class="row pr-md-16 pl-md-16"
       >
         <div
-          class="col col-7"
-          xs="12"
+          class="col-md-7 col-12 col"
         >
           <div
             class="v-input theme--light v-text-field v-text-field--placeholder"
@@ -99,6 +98,13 @@ exports[`Testando componente FarmFilter Verifica se Renderizou corretamente 1`] 
                   class="v-input--radio-group__input"
                   role="radiogroup"
                 >
+                  <legend
+                    class="v-label theme--light"
+                    id="input-31"
+                    style="left: 0px; position: relative;"
+                  >
+                    Ordenação
+                  </legend>
                   <div
                     class="v-radio theme--light v-item--active"
                   >
@@ -126,7 +132,7 @@ exports[`Testando componente FarmFilter Verifica se Renderizou corretamente 1`] 
                       for="input-32"
                       style="left: 0px; position: relative;"
                     >
-                      Ordenar A|Z
+                      A|Z
                     </label>
                   </div>
                    
@@ -157,7 +163,7 @@ exports[`Testando componente FarmFilter Verifica se Renderizou corretamente 1`] 
                       for="input-34"
                       style="left: 0px; position: relative;"
                     >
-                      Ordenar Z|A
+                      Z|A
                     </label>
                   </div>
                    
@@ -188,7 +194,7 @@ exports[`Testando componente FarmFilter Verifica se Renderizou corretamente 1`] 
                       for="input-36"
                       style="left: 0px; position: relative;"
                     >
-                      Maiores Totais de Casos
+                      Totais de Casos
                     </label>
                   </div>
                    
@@ -219,7 +225,7 @@ exports[`Testando componente FarmFilter Verifica se Renderizou corretamente 1`] 
                       for="input-38"
                       style="left: 0px; position: relative;"
                     >
-                      Maiores Totais de Mortes
+                      Totais de Mortes
                     </label>
                   </div>
                    
@@ -250,7 +256,7 @@ exports[`Testando componente FarmFilter Verifica se Renderizou corretamente 1`] 
                       for="input-40"
                       style="left: 0px; position: relative;"
                     >
-                      Maiores Fatalidades
+                      Fatalidades
                     </label>
                   </div>
                 </div>
