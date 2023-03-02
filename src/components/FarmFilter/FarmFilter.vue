@@ -12,8 +12,9 @@
                             placeholder="Digite o nome do País"
                             prepend-inner-icon="mdi-magnify"
                             color="primary"
+                            data-testid="input-field"
                             v-model="countryName"
-                            @change="filterCountry"
+                            @keydown="filterCountry"
                         />
                     </v-col>
                     <v-col xs=12>
@@ -63,13 +64,16 @@
 
 </style>
 <script>
+import { mapActions } from 'vuex';
+
 export default {
     name: 'FarmFilter',
     data: () => ({
         countryName: '',
-        optionOrder: 'ASC'
+        optionOrder: 'ASC|COUNTRY'
     }),
     methods: {
+        ...mapActions(['filterLstCovidCases', 'orderListOfCountries']),
         filterCountry() {
             this.$store.dispatch('filterLstCovidCases', this.countryName);
         },

@@ -1,0 +1,274 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testando componente FarmFilter Verifica se Renderizou corretamente 1`] = `
+<div
+  class="d-flex justify-center"
+>
+  <div
+    class="filter v-card v-sheet theme--light"
+  >
+    <div
+      class="v-card__title justify-center"
+    >
+      
+            Filtrar dados sobre um país 
+        
+    </div>
+     
+    <div
+      class="v-card__text"
+    >
+      <div
+        class="row pr-16 pl-16"
+      >
+        <div
+          class="col col-7"
+          xs="12"
+        >
+          <div
+            class="v-input theme--light v-text-field v-text-field--placeholder"
+          >
+            <div
+              class="v-input__control"
+            >
+              <div
+                class="v-input__slot"
+              >
+                <div
+                  class="v-input__prepend-inner"
+                >
+                  <div
+                    class="v-input__icon v-input__icon--prepend-inner"
+                  >
+                    <i
+                      aria-hidden="true"
+                      class="v-icon notranslate mdi mdi-magnify theme--light"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="v-text-field__slot"
+                >
+                  <label
+                    class="v-label theme--light"
+                    for="input-27"
+                    style="left: 0px; position: absolute;"
+                  >
+                    Filtrar dados sobre um país 
+                  </label>
+                  <input
+                    data-testid="input-field"
+                    id="input-27"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div
+                class="v-text-field__details"
+              >
+                <div
+                  class="v-messages theme--light"
+                >
+                  <transition-group-stub
+                    class="v-messages__wrapper"
+                    name="message-transition"
+                    tag="div"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="col"
+          xs="12"
+        >
+          <div
+            class="v-input v-input--is-label-active v-input--is-dirty theme--light v-input--selection-controls v-input--radio-group v-input--radio-group--column"
+          >
+            <div
+              class="v-input__control"
+            >
+              <div
+                class="v-input__slot"
+                style="height: auto;"
+              >
+                <div
+                  aria-labelledby="input-31"
+                  class="v-input--radio-group__input"
+                  role="radiogroup"
+                >
+                  <div
+                    class="v-radio theme--light v-item--active"
+                  >
+                    <div
+                      class="v-input--selection-controls__input"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="v-icon notranslate mdi mdi-radiobox-marked theme--light primary--text"
+                      />
+                      <input
+                        aria-checked="true"
+                        id="input-32"
+                        name="radio-31"
+                        role="radio"
+                        type="radio"
+                        value="ASC|COUNTRY"
+                      />
+                      <div
+                        class="v-input--selection-controls__ripple primary--text"
+                      />
+                    </div>
+                    <label
+                      class="v-label theme--light"
+                      for="input-32"
+                      style="left: 0px; position: relative;"
+                    >
+                      Ordenar A|Z
+                    </label>
+                  </div>
+                   
+                  <div
+                    class="v-radio theme--light"
+                  >
+                    <div
+                      class="v-input--selection-controls__input"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="v-icon notranslate mdi mdi-radiobox-blank theme--light"
+                      />
+                      <input
+                        aria-checked="false"
+                        id="input-34"
+                        name="radio-31"
+                        role="radio"
+                        type="radio"
+                        value="DESC|COUNTRY"
+                      />
+                      <div
+                        class="v-input--selection-controls__ripple"
+                      />
+                    </div>
+                    <label
+                      class="v-label theme--light"
+                      for="input-34"
+                      style="left: 0px; position: relative;"
+                    >
+                      Ordenar Z|A
+                    </label>
+                  </div>
+                   
+                  <div
+                    class="v-radio theme--light"
+                  >
+                    <div
+                      class="v-input--selection-controls__input"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="v-icon notranslate mdi mdi-radiobox-blank theme--light"
+                      />
+                      <input
+                        aria-checked="false"
+                        id="input-36"
+                        name="radio-31"
+                        role="radio"
+                        type="radio"
+                        value="ASC|TOTAIS"
+                      />
+                      <div
+                        class="v-input--selection-controls__ripple"
+                      />
+                    </div>
+                    <label
+                      class="v-label theme--light"
+                      for="input-36"
+                      style="left: 0px; position: relative;"
+                    >
+                      Maiores Totais de Casos
+                    </label>
+                  </div>
+                   
+                  <div
+                    class="v-radio theme--light"
+                  >
+                    <div
+                      class="v-input--selection-controls__input"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="v-icon notranslate mdi mdi-radiobox-blank theme--light"
+                      />
+                      <input
+                        aria-checked="false"
+                        id="input-38"
+                        name="radio-31"
+                        role="radio"
+                        type="radio"
+                        value="ASC|MORTES"
+                      />
+                      <div
+                        class="v-input--selection-controls__ripple"
+                      />
+                    </div>
+                    <label
+                      class="v-label theme--light"
+                      for="input-38"
+                      style="left: 0px; position: relative;"
+                    >
+                      Maiores Totais de Mortes
+                    </label>
+                  </div>
+                   
+                  <div
+                    class="v-radio theme--light"
+                  >
+                    <div
+                      class="v-input--selection-controls__input"
+                    >
+                      <i
+                        aria-hidden="true"
+                        class="v-icon notranslate mdi mdi-radiobox-blank theme--light"
+                      />
+                      <input
+                        aria-checked="false"
+                        id="input-40"
+                        name="radio-31"
+                        role="radio"
+                        type="radio"
+                        value="ASC|FATALIDADES"
+                      />
+                      <div
+                        class="v-input--selection-controls__ripple"
+                      />
+                    </div>
+                    <label
+                      class="v-label theme--light"
+                      for="input-40"
+                      style="left: 0px; position: relative;"
+                    >
+                      Maiores Fatalidades
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="v-messages theme--light"
+              >
+                <transition-group-stub
+                  class="v-messages__wrapper"
+                  name="message-transition"
+                  tag="div"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

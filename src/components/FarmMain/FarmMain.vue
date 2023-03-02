@@ -18,6 +18,22 @@
             >
                 <farm-country :country="country" />
             </div>
+
+        </div>
+        <div v-if="apiMessage !== '' && !isCachingInProgress">
+            <v-row 
+                class="mt-5 justify-center"
+            >
+                <v-alert 
+                    type="warning"
+                >
+                    {{ apiMessage }}
+                </v-alert>
+            </v-row>
+    
+            <farm-global 
+                :global-data="lstFilteredCovidCases.Global"
+            />
         </div>
 
         <div v-if="isCachingInProgress">

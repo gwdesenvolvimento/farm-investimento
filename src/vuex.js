@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from 'vuex';
-import axios from 'axios'
+import axios from 'axios';
 
 Vue.use(Vuex);
 
@@ -20,16 +20,15 @@ const store = new Vuex.Store({
             state.showLoading = false
             state.apiMessage = ''
             state.isCachingInProgress = false
-            console.log(state.lstFilteredCovidCases)
         },
         filterLstCovidCases(state, payload) {
 
             state.showLoading = true
 
             if (payload !== "") {
-                state.lstFilteredCovidCases = state.lstCovidCases.filter(item => item.Country.indexOf(payload) !== -1)
-                state.showLoading = !(state.lstFilteredCovidCases.length > 0)
-                state.apiMessage = ''
+                state.lstFilteredCovidCases = state.lstCovidCases.filter(item => item.Country.toUpperCase().indexOf(payload.toUpperCase()) !== -1)
+                state.showLoading = false
+                state.apiMessage = (state.lstFilteredCovidCases.length == 0) ? 'Não foi encontrado nenhum registro para o país país procurado' : ''
                 return 
             }
             
