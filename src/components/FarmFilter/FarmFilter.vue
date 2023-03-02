@@ -37,7 +37,6 @@
 <style scoped>
 .filter {
   width: 70%;
-  margin-top: -60px;
   border: 1px solid var(--light);
 }
 
