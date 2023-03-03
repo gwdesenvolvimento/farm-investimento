@@ -26,5 +26,6 @@ npm run serve
 npm run build
 ```
 ### Rodando testes unitários
-
+```
 npm run test:unit
+```
